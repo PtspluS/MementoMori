@@ -2,12 +2,14 @@ package main
 
 import (
 	"fmt"
+
 	coldfire "github.com/redcode-labs/Coldfire"
-	analyse "inferno.com/main/annalyse"
+	analyse "inferno.com/annalyse"
 )
 
 func main() {
-	fmt.Println(analyse.Analyser())
+	var infos map[string]string = analyse.Infos()
+	fmt.Println(infos)
+	fmt.Println(analyse.UserInfo(infos["user"]))
 	coldfire.PrintGood("Ok")
-	return
 }
